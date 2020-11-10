@@ -3,7 +3,7 @@
 ## Common configuration for all component docker 
 common:
   ## tenant name used as the path name in vault secret
-  tenant: demo
+  tenant: ori
 
   ## a flag to enable ingress to easily access vault UI in development
   enableIngress: true
@@ -60,9 +60,9 @@ vaultConsul:
   ##       3. the following data covers 2 environments (dev and qa)
   ##       4. please modify the values based on your deployment sepcificiation
   vaultData:
-    dev:
+    test:
       auth:
-        dbHost: "demodevauthdb.commerce.svc.cluster.local"
+        dbHost: "oritestauthdb.commerce.svc.cluster.local"
         dbName: "mall"
         dbUser: "wcs"
         dbPassword: "wcs1"
@@ -72,9 +72,9 @@ vaultConsul:
         dbaPassword: "diet4coke"
         dbPassEncrypt: "okFQawPB19Tkl1wKqQPDdAVtwz+mIgpJyqJQUuUWtyk="
         dbaPassEncrypt: "u4h5LS/vJeSzsCfnt6NGfGHYPWK2fRq0+djkmB/iNWU="
-        toolingBaseUrl: "https://cmc.demodevauth.mycompany.com/tooling"
+        toolingBaseUrl: "https://cmc.oritestauth.commerce.orienteed.com/tooling"
       live:
-        dbHost: "demodevlivedb.commerce.svc.cluster.local"
+        dbHost: "oritestlivedb.commerce.svc.cluster.local"
         dbName: "mall"
         dbUser: "wcs"
         dbPassword: "wcs1"
@@ -84,7 +84,7 @@ vaultConsul:
         dbaPassword: "diet4coke"
         dbPassEncrypt: "okFQawPB19Tkl1wKqQPDdAVtwz+mIgpJyqJQUuUWtyk="
         dbaPassEncrypt: "u4h5LS/vJeSzsCfnt6NGfGHYPWK2fRq0+djkmB/iNWU="
-        toolingBaseUrl: "https://cmc.demodevlive.mycompany.com/tooling"
+        toolingBaseUrl: "https://cmc.oritestlive.commerce.orienteed.com/tooling"
       both:
         domainName: "commerce.svc.cluster.local"
         authJWKS: "{base64}eyJrZXlzIjpbeyJrdHkiOiJSU0EiLCJraWQiOiJkZW1vS2V5IiwibiI6ImpIckkzcDRTQ1FUVUNuQmhaWkhESllzd1dCTXVhd3B5VkM2RGFLZENZeDc1MXdtRmx0bGlqY1VyOEd1WkMyLXZvMTZzT2RKZ0J5MDRwdmxydDRTc0ZDeVJvcmU1cVRyZTZJdTZfZTZ4dGRobHg1XzIzaVNmY1pqaG5tTk1SV2pFUC1wbmpZQXlWbjBINU10YVoyLXJlcDlxOUQyRENSQS15ZEtaLTZVd2t0VFZhRy1kTHNuLUNKMVNTNDQydkdybnJWYXU0b25RaVRSQlFjM2NkdHFzdDEzU3BvVHN1Y0lKblJ4RnNtUHd4M0NFUk1CTURwWi0weGRJVHJZNXVUZ3JvZnpRY21VcDRsVFZDQk9vRElJM3AyOE52YWt0TFNTWG00VmFfaHVZQlRlellwU21YWXRpTkpuY2FsUFRnREVaTkNSOWJLdXVQMjZUczMycnUtaGdnUSIsImUiOiJBUUFCIiwiZCI6ImpDZGdTc0o0Q2VsNFItWHhOaTJqX2N3TmNvSEltT0MyU2dpUjhKS1hLRjlhTWxGOHA1REF3LUxJd0xnSTNDRVVvYkN0c1k2VFlmV2JCUFBwcFJISHdPVHFjLVpMWkd5b3dtZk9LdFNfRmtjTTNJcGEtU3llcXU0MWd4bGNtZzg1Wk85UFd4eGduR3RudWJ1c3VXX3ZMSXJxWVQwUmc3UmlnR2NPVzhObVg4WlVYZTJJbDEzZi00VmVWWGRFZEE3YngwTDNkWE9HTzFCSDZJMGNGWmZIU2RYLWl1dzBiZWQ4ZUY0ODNIeDRkY3RMRkJCWmk0eC1iaWNCeEMxSDZLa2tRaThONXV4LVJVWUt0U2NzMFlzVUd3aTkwVjdBanRfY0JnckpZMGZuQk1iQUtfYzVKa0RfM09HYmw1cTZjYlBLQ2lxWDNpZi1hdEV6REkzQXM1T1hBUSIsInAiOiI4ZzRUZWliMUxoblA4NWVFZF9NYjhEcnhFV0hwNjFkTmhodEdEWHhBSGRvWk45aVJNZk00QUxvMG5uNGNwTllVcXpWY3ZmZy1KVHJ3eDJyb1dYRDZGVzlXRXJyWi1HUVpDM0dVRXgyYXRybW4wRUFFM3dhWGI1RXN5X0tfMDFjZFVDbmREU055ZGtSU1FIRTB3Z3F1QV9uTWkxV3RKS3ViVXp4NW9fQ0xJMUUiLCJxIjoibEpLaWJma2lyWU1hZmxiZEw1V0VHdlE0Y2lPaER6TFd4WVBQejlCa3pFWGdCaGxTY0VsLVhLQnh2bTFBa2dkdkhZMXVlT3IxdUhCeXBlSnhCbTNOTUtfelZjOUd5X1NUUnpabkJIajZERGZURVoybW5aWEhXSGNCMTNjQi1XcUh3c2xlaHBLZF9FOE9Db3NnM25rQjZVdDVhc3h4cy03X2FhV05yYnJwUGpFIiwiZHAiOiJwMGM1Q0tMaHItRmd4X3ZfTFJJU1RidS1HNEFxTTF6YkU0SEhzTXdjVjBVQlJvbmhGYjc3QmUycExac0QycHFrSUFtNXRRTllsMHdiV0FVMjI1RHJFMk1rX2I2cG9qSXk2S2l1WjJOX0p5WTRwZi1JSGtVazVKSlVmZ0dkdGNVdldkWUVrTzdkVElROHY1SThucGpZMTZDTFRnT0FxNlg0cXRaUlRnMlBhbkUiLCJkcSI6IlZKeUpxbzJtcFNBejExMkt5ODJmbFdZZU8wcDFMOTJwR0lVdnRVOGVDSU9HeUpKbE01TjNSak1OZEFCdU5Idk5XUXd4ck9WS21RWlpGSVc0RG93N3ZnMkdUQWttYllMVTJVcHZNc25leFZTSmZNX0drcG81RV9WNmRBWFBkd2FuV0ZRcjVBSGR2VkljVWY3WDhqc0J6cVh2LU5XRHI1QmRud0hzaE5NY2dCRSIsInFpIjoiTjdoWERqcEVCZTQxRFp0LUJCelZ4THBOSnd5ckZwSnZqZTFKVGNndkRld0Q5NDVTWWVROGROWGpsYWlVYjVYU19JWWg1dXdjM1lMOGxNeWdGUm1kNVR1c2xDcmU2VUxleGZBY1p0Q3dlVkl0WEsxdjBCUlVKSHFzRU1PZVNGdE12VU5Wdk5sRzlKbmd0OWMxTjRELWZNaVR3VkZndTBIOUFDY1RXT2VYYzZjIn1dfQ=="
@@ -99,9 +99,9 @@ vaultConsul:
         nifiElectionMaxWait: "1 min"
         nifiJvmHeapInit: 4096m
         nifiJvmHeapMax: 6144m
-        registryHost: demodevregistry-app.commerce.svc.cluster.local
+        registryHost: oritestregistry-app.commerce.svc.cluster.local
         registryPort: 30400
-        nifiHost: demodevnifi-app.commerce.svc.cluster.local
+        nifiHost: oritestnifi-app.commerce.svc.cluster.local
         nifiPort: 30800
         redisHost: my-redis-master.redis.svc.cluster.local
         redisPort: 6379
