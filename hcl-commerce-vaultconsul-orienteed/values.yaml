@@ -6,9 +6,9 @@ common:
   tenant: demo
 
   ## a flag to enable ingress to easily access vault UI in development
-  enableIngress: false
+  enableIngress: true
   ## external domain used in ingress domain when ingress is enabled
-  externalDomain: mycompany.com
+  externalDomain: vault.commerce.orienteed.com
   ## a flag to enable secret creation in commerce namespaces
   enableSecretCreation: true
   ## namespaces where commerce environments are deployed
